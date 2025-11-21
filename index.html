@@ -3,46 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <title>Ben Novik | Math Tutor for Kids</title>
+
+  <!-- Basic styling to make the page look clean -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: #f3f4f6; /* light gray */
+      color: #111827;            /* dark gray text */
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 32px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+      color: #374151;
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    li + li {
+      margin-top: 0.25rem;
+    }
+
+    a {
+      color: #2563eb; /* blue link */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      background-color: #2563eb;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .button-link:hover {
+      filter: brightness(0.95);
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Math Tutoring for Elementary & Middle School Students</h1>
+  <div class="page">
+    <h1>Math Tutoring for Elementary & Middle School Students</h1>
 
-  <h2>Hi, I'm Ben.</h2>
+    <h2>Hi, I'm Ben.</h2>
 
-  <p>
-    I’m a math tutor who works with younger students, helping them build a strong 
-    foundation and actually understand what they’re learning — not just memorize steps.
-  </p>
+    <p>
+      I’m a math tutor who works with younger students, helping them build a strong
+      foundation and actually understand what they’re learning — not just memorize steps.
+    </p>
 
-  <h3>Why I Work Well With Kids</h3>
-  <p>
-    I’ve spent years helping and taking care of my little brother and younger cousins, 
-    and I’ve worked with children at summer camp. Through all of that, I’ve learned how 
-    important patience is. Kids learn best when they feel comfortable, supported, and 
-    able to ask questions without pressure.
-  </p>
+    <h3>Why I Work Well With Kids</h3>
+    <p>
+      I’ve spent years helping and taking care of my little brother and younger cousins,
+      and I’ve worked with children at summer camp. Through all of that, I’ve learned how
+      important patience is. Kids learn best when they feel comfortable, supported, and
+      able to ask questions without pressure.
+    </p>
 
-  <p>
-    My approach is calm, step-by-step, and focused on building confidence. I make math 
-    feel simpler and more logical so kids actually enjoy learning it.
-  </p>
+    <p>
+      My approach is calm, step-by-step, and focused on building confidence. I make math
+      feel simpler and more logical so kids actually start to feel good about it.
+    </p>
 
-  <h3>What I Tutor</h3>
-  <ul>
-    <li>Basic math skills (addition, subtraction, multiplication, division)</li>
-    <li>Fractions & decimals</li>
-    <li>Word problems and logical thinking</li>
-    <li>Pre-Algebra</li>
-    <li>Algebra I</li>
-    <li>Homework help + test preparation</li>
-  </ul>
+    <h3>What I Tutor</h3>
+    <ul>
+      <li>Basic math skills (addition, subtraction, multiplication, division)</li>
+      <li>Fractions & decimals</li>
+      <li>Word problems and logical thinking</li>
+      <li>Pre-Algebra</li>
+      <li>Algebra I</li>
+      <li>Homework help + test preparation</li>
+    </ul>
 
-  <h3>Contact Me</h3>
-  <p>
-    Parents can reach me directly at:  
-    <a href="mailto:your-email@example.com">your-email@example.com</a>
-  </p>
+    <h3>Contact Me</h3>
+    <p>
+      Parents can reach me directly at:<br>
+      <a href="mailto:your-email@example.com">your-email@example.com</a>
+    </p>
 
+    <!-- This is a nicer-looking email button -->
+    <a class="button-link" href="mailto:your-email@example.com?subject=Math%20Tutoring%20for%20My%20Child">
+      Email Ben to ask about tutoring
+    </a>
+
+    <p class="note">
+      I’m happy to answer questions about your child’s current level and how I can help.
+    </p>
+  </div>
 </body>
 </html>
-
