@@ -2,47 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ben Novik | Math Tutor for Kids</title>
+  <title>Ben Novik | Private Math Tutor for Kids</title>
 
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: #f3f4f6;
-      color: #111827;
+    :root {
+      --bg-dark: #0f172a;      /* dark navy */
+      --bg-light: #f3f4f6;     /* light gray */
+      --card-bg: #ffffff;
+      --accent: #2563eb;       /* blue */
+      --accent-soft: #1d4ed8;
+      --text-main: #111827;
+      --text-muted: #6b7280;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* TOP NAVIGATION */
+
+    .top-nav {
+      background: #020617;
+      color: #e5e7eb;
+      padding: 0.75rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      margin-left: 1.25rem;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* PAGE WRAPPER */
+
     .page {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 32px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+      max-width: 960px;
+      margin: 32px auto 40px;
+      padding: 32px 28px 36px;
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(15,23,42,0.55);
     }
 
     h1 {
-      font-size: 1.9rem;
-      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       margin-top: 0.5rem;
       margin-bottom: 0.75rem;
-      color: #374151;
+      color: #111827;
     }
 
     h3 {
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
       margin-bottom: 0.5rem;
       color: #111827;
+      font-size: 1.05rem;
     }
 
     p {
       margin-bottom: 0.75rem;
       line-height: 1.6;
+      color: #111827;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.95rem;
     }
 
     ul {
@@ -54,113 +122,377 @@
       margin-top: 0.25rem;
     }
 
-    a {
-      color: #2563eb;
-      text-decoration: none;
+    /* HERO SECTION */
+
+    .hero {
+      margin-bottom: 1.5rem;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr);
+      gap: 1.75rem;
+      align-items: center;
+      margin-top: 1rem;
     }
 
-    /* BUTTON */
-    .button-link {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 999px;
-      background-color: #2563eb;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.95rem;
+    .hero-photo {
+      display: flex;
+      justify-content: center;
     }
 
-    .button-link:hover {
-      filter: brightness(0.95);
-    }
-
-    /* PHOTO FIXED + RESPONSIVE */
     .profile-photo {
-      display: block;
-      width: 180px;
-      height: 180px;
+      width: 190px;
+      height: 190px;
       max-width: 100%;
       object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 16px 35px rgba(15,23,42,0.45);
+    }
+
+    .hero-intro-title {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-soft);
+    }
+
+    .hero-intro-text p {
+      margin-bottom: 0.6rem;
+    }
+
+    /* BUTTONS */
+
+    .button-row {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-soft);
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      color: #111827;
+      font-size: 0.9rem;
+      background: #ffffff;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* SECTION DIVIDERS */
+
+    .section-divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 1.75rem 0 1.5rem;
+    }
+
+    /* PRICING */
+
+    .pricing-note {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .pricing-highlight {
+      font-weight: 600;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .testimonial-card {
       border-radius: 12px;
-      margin: 1rem auto 1.5rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border: 1px dashed #d4d4d8;
+      padding: 0.9rem 1rem;
+      background: #fafafa;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* CONTACT */
+
+    .contact-email {
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+
+    .fine-print {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      max-width: 960px;
+      margin: 0 auto 24px;
+      padding: 0 16px;
+      color: #9ca3af;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 0.9rem;
+      }
+
+      .page {
+        margin: 20px 12px 28px;
+        padding: 22px 18px 26px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        order: -1;
+      }
+
+      .profile-photo {
+        width: 170px;
+        height: 170px;
+      }
+
+      .footer {
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
+  <!-- TOP NAV -->
+  <header class="top-nav">
+    <div class="nav-inner">
+      <div class="nav-logo">BEN NOVIK • MATH TUTOR</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">What I Tutor</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="credentials.html">Credentials</a>
+      </nav>
+    </div>
+  </header>
 
-    <h1>Math Tutoring for Elementary & Middle School Students</h1>
-    <h2>Hi, I'm Ben.</h2>
+  <!-- MAIN CARD -->
+  <main class="page">
+    <!-- HERO / ABOUT -->
+    <section id="about" class="hero">
+      <h1>Math Tutoring for Elementary & Middle School Students</h1>
+      <p class="muted">1-on-1, patient, in-person support focused on real understanding.</p>
 
-    <!-- REAL PHOTO -->
-    <img 
-      src="headshot_purple.jpg"
-      alt="Photo of Ben Novik"
-      class="profile-photo">
+      <div class="hero-grid">
+        <div class="hero-photo">
+          <img
+            src="headshot_purple.jpg"
+            alt="Photo of Ben Novik"
+            class="profile-photo">
+        </div>
 
-    <p>
-      I’m a math tutor who works with younger students, helping them build a strong 
-      foundation and actually understand what they’re learning — not just memorize steps.
-    </p>
+        <div class="hero-intro-text">
+          <div class="hero-intro-title">About Me</div>
+          <h2>Hi, I’m Ben.</h2>
+          <p>
+            I graduated from Stony Brook University with a Bachelor of Science in
+            Applied Mathematics and Statistics. I was born and raised in New York City
+            and currently live in Brooklyn.
+          </p>
+          <p>
+            I have a personal vehicle for travel and I know the city well, which makes
+            it easy for me to meet students and families in convenient locations.
+          </p>
+          <p>
+            Outside of tutoring, I have two cats and I love playing tennis and
+            basketball. Working with kids has always come naturally to me, and I bring
+            that same patience and calm energy into every session.
+          </p>
 
-    <h3>Why I Work Well With Kids</h3>
-    <p>
-      I’ve spent years helping and taking care of my little brother and younger cousins,
-      and I’ve worked with children at summer camp. Through all of that, I’ve learned how 
-      important patience is. Kids learn best when they feel comfortable, supported, and 
-      able to ask questions without pressure.
-    </p>
+          <div class="button-row">
+            <a class="btn-primary"
+               href="mailto:your-email@example.com?subject=Math%20Tutoring%20Inquiry">
+              Email me about tutoring
+            </a>
+            <a class="btn-ghost" href="#pricing">View pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      My approach is calm, step-by-step, and focused on building confidence. I make math 
-      feel simpler and more logical so kids actually start to feel good about it.
-    </p>
+    <div class="section-divider"></div>
 
-    <h3>What I Tutor</h3>
-    <ul>
-      <li>Basic math skills (addition, subtraction, multiplication, division)</li>
-      <li>Fractions & decimals</li>
-      <li>Word problems and logical thinking</li>
-      <li>Pre-Algebra</li>
-      <li>Algebra I</li>
-      <li>Homework help + test preparation</li>
-    </ul>
+    <!-- WHY I WORK WELL WITH KIDS -->
+    <section>
+      <h3>Why I Work Well With Kids</h3>
+      <p>
+        I’ve spent years helping and taking care of my little brother and younger cousins,
+        and I’ve worked with children at summer camp. Through all of that, I’ve learned how
+        important patience is. Kids learn best when they feel comfortable, supported, and
+        able to ask questions without pressure.
+      </p>
+      <p>
+        My approach is calm, step-by-step, and focused on building confidence. I make math
+        feel simpler and more logical so kids actually start to feel good about it.
+      </p>
+    </section>
 
-    <h3>How Sessions Work</h3>
-    <p>
-      I offer one-on-one, in-person math tutoring and charge by the hour.
-      The first session is mainly about understanding how your child learns 
-      and identifying any areas where they feel stuck.
-    </p>
-    <p>
-      We’ll look over homework, quizzes, and tests so I can understand what’s confusing 
-      or intimidating. Every child learns differently, so I adapt my teaching style to 
-      match what works best for them.
-    </p>
+    <!-- WHAT I TUTOR -->
+    <section id="services">
+      <h3>What I Tutor</h3>
+      <ul>
+        <li>Basic math skills (addition, subtraction, multiplication, division)</li>
+        <li>Fractions &amp; decimals</li>
+        <li>Word problems and logical thinking</li>
+        <li>Pre-Algebra</li>
+        <li>Algebra I</li>
+        <li>Homework help + test preparation</li>
+      </ul>
+    </section>
 
-    <h3>Credentials</h3>
-    <p>
-      Parents who want to confirm my academic background can view my diploma here:<br>
-      <a href="credentials.html">View my credentials</a>
-    </p>
+    <!-- HOW SESSIONS WORK -->
+    <section>
+      <h3>How Sessions Work</h3>
+      <p>
+        I offer one-on-one, in-person math tutoring and charge by the hour.
+        The first session is mainly about understanding how your child learns
+        and identifying any areas where they feel stuck.
+      </p>
+      <p>
+        We’ll look over homework, quizzes, and tests so I can see what’s confusing
+        or intimidating. Every child learns differently, so I adjust my explanations
+        and strategies to match what works best for them.
+      </p>
+      <p>
+        From there, we focus on building real understanding first. As confidence
+        grows, grades and test scores naturally follow.
+      </p>
+    </section>
 
-    <h3>Contact Me</h3>
-    <p>
-      Parents can reach me directly at:<br>
-      <a href="mailto:your-email@example.com">your-email@example.com</a>
-    </p>
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="section-divider"></div>
+      <h3>Pricing</h3>
+      <p class="pricing-note">
+        I’m currently finalizing my standard rate. For now, here’s how pricing is structured:
+      </p>
+      <ul>
+        <li><span class="pricing-highlight">Standard rate:</span> X&nbsp;$/hour (to be confirmed)</li>
+        <li><span class="pricing-highlight">First session:</span> 25% off the standard hourly rate</li>
+        <li>
+          <span class="pricing-highlight">Location:</span> In-person sessions primarily in Brooklyn and nearby areas.
+          Additional travel fees may apply for sessions in Manhattan (to cover parking, tolls, and transportation).
+        </li>
+      </ul>
+      <p class="pricing-note">
+        If you reach out by email, I’ll share my current rate and we can discuss what makes sense
+        for your child’s needs and your schedule.
+      </p>
+    </section>
 
-    <a class="button-link" href="mailto:your-email@example.com?subject=Math%20Tutoring%20Inquiry">
-      Email Ben to ask about tutoring
-    </a>
-  </div>
+    <!-- CREDENTIALS -->
+    <section>
+      <h3>Credentials</h3>
+      <p>
+        Parents who want to confirm my academic background can view my diploma here:<br>
+        <a href="credentials.html">View my credentials</a>
+      </p>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="section-divider"></div>
+      <h3>Reviews (Coming Soon)</h3>
+      <p class="muted">
+        As I work with more families, I’ll add short reviews here so parents can see
+        real experiences from other students.
+      </p>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          Future parent review will appear here once I’ve worked with more students.
+        </div>
+        <div class="testimonial-card">
+          Another spot for feedback about progress, confidence, and improvements in math.
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-divider"></div>
+      <h3>Contact Me</h3>
+      <p>Parents can reach me directly at:</p>
+      <p class="contact-email">
+        <a href="mailto:your-email@example.com">your-email@example.com</a>
+      </p>
+      <p class="fine-print">
+        Feel free to include your child’s grade, school, current math topic, and a few times that work
+        for a first session. I usually respond within 24 hours.
+      </p>
+
+      <div class="button-row">
+        <a class="btn-primary"
+           href="mailto:your-email@example.com?subject=Math%20Tutoring%20Inquiry">
+          Email Ben to ask about tutoring
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>© <span id="year"></span> Ben Novik Tutoring</span>
+    <span>Based in New York City</span>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
