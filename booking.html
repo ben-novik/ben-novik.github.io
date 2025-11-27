@@ -231,75 +231,87 @@
     <h1>Book a First Session</h1>
     <p>
       Please fill out this form so I can learn a bit about your child and what you’re
-      looking for in math tutoring. I’ll follow up by email to confirm details and
-      schedule our first session.
-    </p>
-    <p class="muted">
-      I only use this information to prepare for tutoring and to communicate with you
-      about sessions.
+      looking for in math tutoring. I’ll follow up personally to schedule a call or
+      confirm a first session.
     </p>
 
     <!-- Formspree-powered form -->
-    <form
-      action="https://formspree.io/f/xnnkvban"
-      method="POST"
-    >
+    <form action="https://formspree.io/f/xnnkvban" method="POST">
       <input type="hidden" name="_subject" value="New tutoring inquiry from your website">
 
       <div class="form-grid">
+
         <div>
-          <label for="parent-name">Parent / Guardian Name</label>
-          <input type="text" id="parent-name" name="Parent Name" required>
+          <label>Parent / Guardian Name</label>
+          <input type="text" name="Parent Name" required>
         </div>
 
         <div>
-          <label for="parent-email">Parent Email</label>
-          <input type="email" id="parent-email" name="Parent Email" required>
+          <label>Parent Email</label>
+          <input type="email" name="Parent Email" required>
         </div>
 
         <div>
-          <label for="child-name">Child’s Name</label>
-          <input type="text" id="child-name" name="Child Name" required>
+          <label>Phone Number</label>
+          <input type="text" name="Phone Number" placeholder="(123) 456-7890" required>
         </div>
 
         <div>
-          <label for="child-age">Child’s Age</label>
-          <input type="number" id="child-age" name="Child Age" min="4" max="19">
+          <label>Preferred Time to Contact</label>
+          <select name="Preferred Contact Time" required>
+            <option value="" disabled selected>Select a time</option>
+            <option>Morning (8am–12pm)</option>
+            <option>Afternoon (12pm–4pm)</option>
+            <option>Evening (4pm–8pm)</option>
+            <option>Anytime</option>
+          </select>
         </div>
 
         <div>
-          <label for="grade">Grade</label>
-          <input type="text" id="grade" name="Grade" placeholder="e.g., 4th grade, 8th grade, 9th grade">
+          <label>Child’s Name</label>
+          <input type="text" name="Child Name" required>
         </div>
 
         <div>
-          <label for="location">Location / Neighborhood</label>
-          <input type="text" id="location" name="Location"
-                 placeholder="e.g., Park Slope, Brooklyn">
+          <label>Child’s Age</label>
+          <input type="number" name="Child Age" min="4" max="19">
+        </div>
+
+        <div>
+          <label>Grade</label>
+          <input type="text" name="Grade" placeholder="e.g., 4th grade, 9th grade">
+        </div>
+
+        <div>
+          <label>Location / Neighborhood</label>
+          <input type="text" name="Location" placeholder="e.g., Park Slope, Brooklyn">
         </div>
 
         <div class="form-full">
-          <label for="goals">What are your main goals?</label>
-          <textarea id="goals" name="Goals" placeholder="For example: improve grades, pass upcoming tests, build confidence, understand homework better, prepare for next school year." required></textarea>
+          <label>Main Goals</label>
+          <textarea name="Goals" required
+            placeholder="Improve grades, pass tests, build confidence, understand homework better, prepare for next school year, etc."></textarea>
         </div>
 
         <div class="form-full">
-          <label for="challenges">Anything I should know about how your child learns?</label>
-          <textarea id="challenges" name="Learning / Attention Notes"
-            placeholder="For example: trouble focusing, anxiety around math, diagnosed learning differences, or anything else that would help me support them better."></textarea>
-          <div class="helper">
-            You don’t have to share anything you’re not comfortable with, but any context you provide helps me prepare.
-          </div>
+          <label>Learning or Attention Notes</label>
+          <textarea name="Learning Notes"
+            placeholder="Trouble focusing, anxiety around math, learning differences, etc."></textarea>
         </div>
 
         <div class="form-full">
-          <label for="other-info">Additional information</label>
-          <textarea id="other-info" name="Additional Information"
-            placeholder="Scheduling preferences, how often you’d like sessions, upcoming tests or deadlines, etc."></textarea>
+          <label>Additional Information</label>
+          <textarea name="Additional Information"
+            placeholder="Scheduling preferences, how often you'd like sessions, upcoming tests, etc."></textarea>
         </div>
+
       </div>
 
       <div class="button-row">
         <button type="submit" class="btn-primary">Send details to Ben</button>
         <a href="mailto:novik.ben@gmail.com" class="btn-ghost">Or email me directly</a>
       </div>
+    </form>
+  </main>
+</body>
+</html>
