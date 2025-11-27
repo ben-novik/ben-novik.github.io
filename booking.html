@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book a First Session | Ben Novik Tutoring</title>
+
+  <style>
+    :root {
+      --bg-body: #e5e7eb;
+      --card-bg: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #1d4ed8;
+      --nav-text: #0f172a;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: --bg-body;
+      background-color: #e5e7eb;
+      color: var(--text-main);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* NAV */
+
+    .top-nav {
+      background: #ffffff;
+      color: var(--nav-text);
+      padding: 0.75rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 3px 10px rgba(15,23,42,0.10);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 0.95rem;
+      color: var(--nav-text);
+    }
+
+    .nav-links a {
+      margin-left: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--nav-text);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-soft);
+    }
+
+    /* PAGE CARD */
+
+    .page {
+      max-width: 960px;
+      margin: 28px auto 36px;
+      padding: 26px 24px 30px;
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.18);
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* FORM */
+
+    form {
+      margin-top: 1.5rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 1.25rem;
+    }
+
+    .form-full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #111827;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .helper {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .button-row {
+      margin-top: 1.4rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-soft);
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      font-size: 0.9rem;
+      color: #111827;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 0.9rem;
+      }
+
+      .page {
+        margin: 16px 10px 26px;
+        padding: 20px 16px 24px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="top-nav">
+    <div class="nav-inner">
+      <div class="nav-logo">BEN NOVIK • MATH TUTOR</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">What I Tutor</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="booking.html">Book a Session</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page">
+    <h1>Book a First Session</h1>
+    <p>
+      Please fill out this form so I can learn a bit about your child and what you’re
+      looking for in math tutoring. I’ll follow up by email to confirm details and
+      schedule our first session.
+    </p>
+    <p class="muted">
+      I only use this information to prepare for tutoring and to communicate with you
+      about sessions.
+    </p>
+
+    <!-- Simple email-based form -->
+    <form action="mailto:novik.ben@gmail.com" method="POST" enctype="text/plain">
+      <div class="form-grid">
+        <div>
+          <label for="parent-name">Parent / Guardian Name</label>
+          <input type="text" id="parent-name" name="Parent Name" required>
+        </div>
+
+        <div>
+          <label for="parent-email">Parent Email</label>
+          <input type="email" id="parent-email" name="Parent Email" required>
+        </div>
+
+        <div>
+          <label for="child-name">Child’s Name</label>
+          <input type="text" id="child-name" name="Child Name" required>
+        </div>
+
+        <div>
+          <label for="child-age">Child’s Age</label>
+          <input type="number" id="child-age" name="Child Age" min="4" max="19">
+        </div>
+
+        <div>
+          <label for="grade">Grade</label>
+          <input type="text" id="grade" name="Grade" placeholder="e.g., 4th grade, 8th grade, 9th grade">
+        </div>
+
+        <div>
+          <label for="location">Location / Neighborhood</label>
+          <input type="text" id="location" name="Location"
+                 placeholder="e.g., Park Slope, Brooklyn">
+        </div>
+
+        <div class="form-full">
+          <label for="goals">What are your main goals?</label>
+          <textarea id="goals" name="Goals" placeholder="For example: improve grades, pass upcoming tests, build confidence, understand homework better, prepare for next school year." required></textarea>
+        </div>
+
+        <div class="form-full">
+          <label for="challenges">Anything I should know about how your child learns?</label>
+          <textarea id="challenges" name="Learning / Attention Notes"
+            placeholder="For example: trouble focusing, anxiety around math, diagnosed learning differences, or anything else that would help me support them better."></textarea>
+          <div class="helper">
+            You don’t have to share anything you’re not comfortable with, but any context you provide helps me prepare.
+          </div>
+        </div>
+
+        <div class="form-full">
+          <label for="other-info">Additional information</label>
+          <textarea id="other-info" name="Additional Information"
+            placeholder="Scheduling preferences, how often you’d like sessions, upcoming tests or deadlines, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button type="submit" class="btn-primary">Send details to Ben</button>
+        <a href="mailto:novik.ben@gmail.com" class="btn-ghost">Or email me directly</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
