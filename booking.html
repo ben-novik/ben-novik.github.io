@@ -2,189 +2,182 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Book a First Session | Ben Novik Tutoring</title>
+  <title>Ben Novik | Book a First Session</title>
 
   <style>
     :root {
-      --bg-body: #e5e7eb;
+      --bg-body: #f5f1ff;
       --card-bg: #ffffff;
-      --accent: #2563eb;
-      --accent-soft: #1d4ed8;
-      --nav-text: #0f172a;
-      --text-main: #111827;
+      --card-subtle: #f7f5ff;
+      --accent: #7c3aed;
+      --accent-soft: #6d28d9;
+      --accent-pill: #e0d4ff;
+      --nav-text: #2d1b4c;
+      --text-main: #18181b;
       --text-muted: #6b7280;
       --border-subtle: #e5e7eb;
+      --shadow-soft: 0 18px 45px rgba(31, 41, 55, 0.18);
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--bg-body);
+      background:
+        radial-gradient(circle at top left, #ede9fe 0, #f5f1ff 40%, #f9f6ff 100%);
       color: var(--text-main);
     }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* NAV */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     .top-nav {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.96);
       color: var(--nav-text);
-      padding: 0.75rem 1.5rem;
       position: sticky;
       top: 0;
-      z-index: 20;
-      box-shadow: 0 3px 10px rgba(15,23,42,0.10);
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
     }
-
     .nav-inner {
-      max-width: 960px;
+      max-width: 1040px;
       margin: 0 auto;
+      padding: 0.7rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
+    .nav-left { display: flex; align-items: baseline; gap: 0.5rem; }
     .nav-logo {
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      font-size: 0.95rem;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      font-size: 0.88rem;
       color: var(--nav-text);
+      text-transform: uppercase;
     }
-
+    .nav-tagline { font-size: 0.78rem; color: #6b7280; }
     .nav-links a {
-      margin-left: 1.25rem;
-      font-size: 0.9rem;
+      margin-left: 1.3rem;
+      font-size: 0.88rem;
       color: var(--nav-text);
+      opacity: 0.9;
     }
+    .nav-links a:hover { color: var(--accent-soft); opacity: 1; }
 
-    .nav-links a:hover {
-      color: var(--accent-soft);
+    .shell {
+      max-width: 1040px;
+      margin: 32px auto 26px;
+      padding: 0 1.5rem 1.5rem;
     }
-
-    /* PAGE CARD */
-
     .page {
-      max-width: 960px;
-      margin: 28px auto 36px;
-      padding: 26px 24px 30px;
       background: var(--card-bg);
-      border-radius: 18px;
-      box-shadow: 0 16px 40px rgba(15,23,42,0.18);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      padding: 26px 28px 32px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
     }
 
     h1 {
       font-size: 1.9rem;
-      margin-bottom: 0.35rem;
+      margin: 0 0 0.3rem;
+      color: #111827;
     }
-
     p {
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.7;
       color: var(--text-main);
-      line-height: 1.6;
+      font-size: 0.97rem;
     }
-
-    .muted {
-      color: var(--text-muted);
-      font-size: 0.95rem;
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #a1a1aa;
+      margin-bottom: 0.3rem;
     }
+    .hero-book {
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at top left, #ede9fe 0, #f5f3ff 35%, #ffffff 75%);
+      border: 1px solid var(--border-subtle);
+      padding: 22px 22px 26px;
+      margin-bottom: 1.9rem;
+    }
+    .hero-subtitle { color: var(--text-muted); font-size: 0.95rem; max-width: 40rem; }
 
     /* FORM */
 
-    form {
-      margin-top: 1.5rem;
+    .form-card {
+      background: var(--card-subtle);
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      padding: 18px 18px 22px;
     }
-
-    .form-grid {
+    form {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem 1.25rem;
+      gap: 1rem 1.2rem;
     }
-
-    .form-full {
-      grid-column: 1 / -1;
-    }
-
+    .field-full { grid-column: 1 / -1; }
     label {
       display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #4b5563;
       margin-bottom: 0.25rem;
-      color: #111827;
     }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="number"],
-    textarea,
-    select {
+    input, select, textarea {
       width: 100%;
-      padding: 0.55rem 0.7rem;
+      padding: 0.55rem 0.6rem;
       border-radius: 8px;
-      border: 1px solid #d1d5db;
-      font-size: 0.95rem;
+      border: 1px solid #d4d4d8;
+      font-size: 0.9rem;
       font-family: inherit;
-    }
-
-    textarea {
-      min-height: 100px;
       resize: vertical;
     }
-
-    .helper {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 0.15rem;
-    }
-
-    .button-row {
-      margin-top: 1.4rem;
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
+    textarea { min-height: 80px; }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-soft);
+      box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.35);
     }
 
     .btn-primary {
-      display: inline-block;
-      padding: 0.6rem 1.3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.5rem;
       border-radius: 999px;
-      background: var(--accent);
+      background: radial-gradient(circle at top left, #a855f7 0, #7c3aed 40%, #5b21b6 100%);
       color: #ffffff;
       font-weight: 600;
       font-size: 0.95rem;
-      text-decoration: none;
       border: none;
       cursor: pointer;
+      box-shadow: 0 10px 25px rgba(88, 28, 135, 0.45);
+      margin-top: 0.5rem;
     }
-
     .btn-primary:hover {
-      background: var(--accent-soft);
+      background: radial-gradient(circle at top left, #c4b5fd 0, #7c3aed 40%, #5b21b6 100%);
+      transform: translateY(-1px);
     }
 
-    .btn-ghost {
-      display: inline-block;
-      padding: 0.55rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
-      background: #ffffff;
-      font-size: 0.9rem;
-      color: #111827;
+    .fine-print {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
     }
 
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+    .footer {
+      max-width: 1040px;
+      margin: 12px auto 18px;
+      padding: 0 1.5rem;
+      color: #6b7280;
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     @media (max-width: 720px) {
@@ -193,125 +186,137 @@
         align-items: flex-start;
         gap: 0.35rem;
       }
-
       .nav-links a {
         margin-left: 0;
         margin-right: 0.9rem;
       }
-
-      .page {
-        margin: 16px 10px 26px;
-        padding: 20px 16px 24px;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
+      .shell { padding: 0 0.9rem 1.1rem; }
+      .page { padding: 22px 18px 26px; }
+      form { grid-template-columns: 1fr; }
+      .footer {
+        flex-direction: column;
+        gap: 0.2rem;
+        text-align: center;
       }
     }
   </style>
 </head>
-
 <body>
   <!-- NAV -->
   <header class="top-nav">
     <div class="nav-inner">
-      <div class="nav-logo">BEN NOVIK • MATH TUTOR</div>
+      <div class="nav-left">
+        <div class="nav-logo">BEN NOVIK</div>
+        <div class="nav-tagline">Private Math Tutoring • NYC</div>
+      </div>
       <nav class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
         <a href="index.html#services">What I Tutor</a>
         <a href="index.html#pricing">Pricing</a>
         <a href="booking.html">Book a Session</a>
         <a href="index.html#contact">Contact</a>
+        <a href="credentials.html">Credentials</a>
       </nav>
     </div>
   </header>
 
-  <!-- PAGE CONTENT -->
-  <main class="page">
-    <h1>Book a First Session</h1>
-    <p>
-      Please fill out this form so I can learn a bit about your child and what you’re
-      looking for in math tutoring. I’ll follow up personally to schedule a call or
-      confirm a first session.
-    </p>
+  <div class="shell">
+    <main class="page">
+      <section class="hero-book">
+        <div class="section-label">Get started</div>
+        <h1>Book a first session</h1>
+        <p class="hero-subtitle">
+          Share a few details about your child and I’ll follow up to confirm a time,
+          talk through goals, and answer any questions before we meet.
+        </p>
+      </section>
 
-    <!-- Formspree-powered form -->
-    <form action="https://formspree.io/f/xnnkvban" method="POST">
-      <input type="hidden" name="_subject" value="New tutoring inquiry from your website">
+      <section class="form-card">
+        <form action="https://formspree.io/f/xnnkvban" method="POST">
+          <!-- Parent & child info -->
+          <div>
+            <label for="parent-name">Parent/guardian name</label>
+            <input id="parent-name" name="Parent name" type="text" required>
+          </div>
+          <div>
+            <label for="child-name">Child's name</label>
+            <input id="child-name" name="Child name" type="text" required>
+          </div>
 
-      <div class="form-grid">
+          <div>
+            <label for="child-age">Child's age</label>
+            <input id="child-age" name="Child age" type="number" min="4" max="20" required>
+          </div>
+          <div>
+            <label for="child-grade">Child's grade</label>
+            <input id="child-grade" name="Child grade" type="text" placeholder="e.g. 3rd grade, 8th grade" required>
+          </div>
 
-        <div>
-          <label>Parent / Guardian Name</label>
-          <input type="text" name="Parent Name" required>
-        </div>
+          <!-- Contact info -->
+          <div>
+            <label for="email">Parent email</label>
+            <input id="email" name="Parent email" type="email" required>
+          </div>
+          <div>
+            <label for="phone">Parent phone number</label>
+            <input id="phone" name="Parent phone" type="tel" placeholder="(xxx) xxx-xxxx">
+          </div>
 
-        <div>
-          <label>Parent Email</label>
-          <input type="email" name="Parent Email" required>
-        </div>
+          <!-- Preferred contact time -->
+          <div class="field-full">
+            <label for="contact-time">Preferred time to be contacted</label>
+            <input id="contact-time" name="Preferred contact time"
+                   type="text" placeholder="e.g. Weeknights after 6pm, Saturday mornings">
+          </div>
 
-        <div>
-          <label>Phone Number</label>
-          <input type="text" name="Phone Number" placeholder="(123) 456-7890" required>
-        </div>
+          <!-- Location -->
+          <div class="field-full">
+            <label for="location">Neighborhood / location for sessions</label>
+            <input id="location" name="Location"
+                   type="text" placeholder="e.g. Brooklyn – Park Slope">
+          </div>
 
-        <div>
-          <label>Preferred Time to Contact</label>
-          <select name="Preferred Contact Time" required>
-            <option value="" disabled selected>Select a time</option>
-            <option>Morning (8am–12pm)</option>
-            <option>Afternoon (12pm–4pm)</option>
-            <option>Evening (4pm–8pm)</option>
-            <option>Anytime</option>
-          </select>
-        </div>
+          <!-- Goals -->
+          <div class="field-full">
+            <label for="goals">What would you like to focus on?</label>
+            <textarea id="goals" name="Goals"
+              placeholder="Examples: improve grades, get ready for a specific test, build confidence, better understanding of homework, etc."></textarea>
+          </div>
 
-        <div>
-          <label>Child’s Name</label>
-          <input type="text" name="Child Name" required>
-        </div>
+          <!-- Learning details -->
+          <div class="field-full">
+            <label for="learning-notes">Anything I should know about how your child learns?</label>
+            <textarea id="learning-notes" name="Learning notes"
+              placeholder="Optional: attention or focus challenges, learning differences, medical conditions, or anything else that helps me support your child."></textarea>
+          </div>
 
-        <div>
-          <label>Child’s Age</label>
-          <input type="number" name="Child Age" min="4" max="19">
-        </div>
+          <!-- Start timing -->
+          <div class="field-full">
+            <label for="timeline">How soon would you like to start?</label>
+            <input id="timeline" name="Start timeline"
+                   type="text" placeholder="e.g. As soon as possible, within the next month, only during summer, etc.">
+          </div>
 
-        <div>
-          <label>Grade</label>
-          <input type="text" name="Grade" placeholder="e.g., 4th grade, 9th grade">
-        </div>
+          <!-- Submit -->
+          <div class="field-full">
+            <button class="btn-primary" type="submit">Submit booking request</button>
+            <p class="fine-print">
+              This form sends your responses securely to my email through Formspree.
+              I’ll respond as soon as I can to confirm details.
+            </p>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
 
-        <div>
-          <label>Location / Neighborhood</label>
-          <input type="text" name="Location" placeholder="e.g., Park Slope, Brooklyn">
-        </div>
+  <footer class="footer">
+    <span>© <span id="year"></span> Ben Novik Tutoring</span>
+    <span>Based in New York City</span>
+  </footer>
 
-        <div class="form-full">
-          <label>Main Goals</label>
-          <textarea name="Goals" required
-            placeholder="Improve grades, pass tests, build confidence, understand homework better, prepare for next school year, etc."></textarea>
-        </div>
-
-        <div class="form-full">
-          <label>Learning or Attention Notes</label>
-          <textarea name="Learning Notes"
-            placeholder="Trouble focusing, anxiety around math, learning differences, etc."></textarea>
-        </div>
-
-        <div class="form-full">
-          <label>Additional Information</label>
-          <textarea name="Additional Information"
-            placeholder="Scheduling preferences, how often you'd like sessions, upcoming tests, etc."></textarea>
-        </div>
-
-      </div>
-
-      <div class="button-row">
-        <button type="submit" class="btn-primary">Send details to Ben</button>
-        <a href="mailto:novik.ben@gmail.com" class="btn-ghost">Or email me directly</a>
-      </div>
-    </form>
-  </main>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
