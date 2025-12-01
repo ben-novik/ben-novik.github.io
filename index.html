@@ -6,18 +6,17 @@
 
   <style>
     :root {
-      --bg-page: #020617;          /* deep navy */
-      --bg-page-soft: #0b1220;     /* softer navy */
+      --bg-body: #e5e7eb;      /* light gray page background */
       --card-bg: #ffffff;
       --card-subtle: #f9fafb;
-      --accent: #2563eb;           /* blue */
+      --accent: #2563eb;       /* blue */
       --accent-soft: #1d4ed8;
       --accent-pill: #dbeafe;
-      --nav-text: #e5e7eb;
+      --nav-text: #0f172a;     /* dark navy */
       --text-main: #0f172a;
       --text-muted: #6b7280;
       --border-subtle: #e5e7eb;
-      --shadow-soft: 0 18px 45px rgba(15,23,42,0.35);
+      --shadow-soft: 0 18px 45px rgba(15,23,42,0.20);
     }
 
     * {
@@ -27,10 +26,7 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, #1f2937 0, #020617 52%),
-        linear-gradient(135deg, #020617 0%, #020617 60%, #0b1120 100%);
-      min-height: 100vh;
+      background-color: var(--bg-body);
       color: var(--text-main);
     }
 
@@ -43,20 +39,16 @@
       text-decoration: underline;
     }
 
-    /* TOP NAVIGATION */
+    /* TOP NAVIGATION – light, simple */
 
     .top-nav {
+      background: #ffffff;
+      color: var(--nav-text);
+      padding: 0;
       position: sticky;
       top: 0;
       z-index: 30;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(
-        to bottom,
-        rgba(15,23,42,0.92),
-        rgba(15,23,42,0.82),
-        rgba(15,23,42,0.60)
-      );
-      border-bottom: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 3px 10px rgba(15,23,42,0.10);
     }
 
     .nav-inner {
@@ -78,24 +70,24 @@
       font-weight: 650;
       letter-spacing: 0.08em;
       font-size: 0.88rem;
-      color: #e5e7eb;
+      color: var(--nav-text);
       text-transform: uppercase;
     }
 
     .nav-tagline {
       font-size: 0.78rem;
-      color: #9ca3af;
+      color: #6b7280;
     }
 
     .nav-links a {
       margin-left: 1.3rem;
       font-size: 0.88rem;
-      color: #e5e7eb;
+      color: var(--nav-text);
       opacity: 0.9;
     }
 
     .nav-links a:hover {
-      color: #ffffff;
+      color: var(--accent-soft);
       opacity: 1;
     }
 
@@ -232,7 +224,7 @@
       max-width: 100%;
       object-fit: cover;
       border-radius: 26px;
-      box-shadow: 0 22px 40px rgba(15,23,42,0.45);
+      box-shadow: 0 22px 40px rgba(15,23,42,0.35);
       border: 3px solid #ffffff;
       background: #0f172a;
     }
@@ -347,7 +339,7 @@
       max-width: 1040px;
       margin: 12px auto 18px;
       padding: 0 1.5rem;
-      color: #9ca3af;
+      color: #6b7280;
       font-size: 0.78rem;
       display: flex;
       justify-content: space-between;
