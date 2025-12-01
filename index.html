@@ -6,17 +6,19 @@
 
   <style>
     :root {
-      --bg-body: #e5e7eb;      /* light gray page background */
+      /* PURPLE PREMIUM PALETTE */
+      --bg-body: #f5f1ff;         /* soft lavender */
+      --bg-body-soft: #f9f6ff;
       --card-bg: #ffffff;
-      --card-subtle: #f9fafb;
-      --accent: #2563eb;       /* blue */
-      --accent-soft: #1d4ed8;
-      --accent-pill: #dbeafe;
-      --nav-text: #0f172a;     /* dark navy */
-      --text-main: #0f172a;
+      --card-subtle: #f7f5ff;
+      --accent: #7c3aed;          /* main purple */
+      --accent-soft: #6d28d9;
+      --accent-pill: #e0d4ff;
+      --nav-text: #2d1b4c;
+      --text-main: #18181b;
       --text-muted: #6b7280;
       --border-subtle: #e5e7eb;
-      --shadow-soft: 0 18px 45px rgba(15,23,42,0.20);
+      --shadow-soft: 0 18px 45px rgba(31, 41, 55, 0.18);
     }
 
     * {
@@ -26,7 +28,8 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--bg-body);
+      background:
+        radial-gradient(circle at top left, #ede9fe 0, #f5f1ff 40%, #f9f6ff 100%);
       color: var(--text-main);
     }
 
@@ -39,16 +42,18 @@
       text-decoration: underline;
     }
 
-    /* TOP NAVIGATION – light, simple */
+    /* TOP NAV – clean, light */
 
     .top-nav {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.96);
       color: var(--nav-text);
       padding: 0;
       position: sticky;
       top: 0;
       z-index: 30;
-      box-shadow: 0 3px 10px rgba(15,23,42,0.10);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
     }
 
     .nav-inner {
@@ -104,28 +109,28 @@
       border-radius: 24px;
       box-shadow: var(--shadow-soft);
       padding: 26px 28px 32px;
-      border: 1px solid rgba(226,232,240,0.9);
+      border: 1px solid rgba(226, 232, 240, 0.9);
     }
 
     /* TYPOGRAPHY */
 
     h1 {
-      font-size: 2.15rem;
+      font-size: 2.3rem;
       margin: 0 0 0.35rem;
-      color: var(--text-main);
+      color: #111827;
       letter-spacing: 0.01em;
     }
 
     h2 {
       font-size: 1.4rem;
-      margin: 0.15rem 0 0.85rem;
-      color: var(--text-main);
+      margin: 0.2rem 0 0.85rem;
+      color: #111827;
     }
 
     h3 {
       margin-top: 1.9rem;
       margin-bottom: 0.6rem;
-      color: var(--text-main);
+      color: #111827;
       font-size: 1.08rem;
       letter-spacing: 0.02em;
     }
@@ -158,7 +163,7 @@
       letter-spacing: 0.16em;
       font-size: 0.74rem;
       font-weight: 600;
-      color: #9ca3af;
+      color: #a1a1aa;
       margin-bottom: 0.1rem;
     }
 
@@ -166,13 +171,13 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.55fr) minmax(0, 1.1fr);
-      gap: 1.8rem;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 2rem;
       align-items: center;
-      padding: 20px 22px 22px;
+      padding: 22px 22px 24px;
       border-radius: 20px;
       background:
-        radial-gradient(circle at top left, #eff6ff 0, #e5edff 34%, #ffffff 70%);
+        radial-gradient(circle at top left, #ede9fe 0, #f5f3ff 35%, #ffffff 75%);
       border: 1px solid var(--border-subtle);
       margin-bottom: 1.9rem;
     }
@@ -181,19 +186,19 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      padding: 0.15rem 0.55rem;
+      padding: 0.15rem 0.65rem;
       border-radius: 999px;
       background: var(--accent-pill);
-      color: #1d4ed8;
+      color: var(--accent-soft);
       font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
 
     .hero-subtitle {
-      margin-top: 0.25rem;
+      margin-top: 0.35rem;
       color: #4b5563;
       font-size: 0.95rem;
       max-width: 32rem;
@@ -206,33 +211,34 @@
 
     .hero-photo-inner {
       position: relative;
+      display: inline-block;
     }
 
     .hero-photo-ring {
       position: absolute;
-      inset: -8%;
+      inset: -10%;
       border-radius: 999px;
-      background: conic-gradient(from 200deg, #1d4ed8, #a855f7, #22c55e, #1d4ed8);
-      opacity: 0.32;
-      filter: blur(2px);
+      background: conic-gradient(from 190deg, #7c3aed, #22c55e, #f97316, #7c3aed);
+      opacity: 0.5;
+      filter: blur(4px);
     }
 
     .profile-photo {
       position: relative;
-      width: 220px;
-      height: 220px;
+      width: 260px;
+      height: 260px;
       max-width: 100%;
       object-fit: cover;
-      border-radius: 26px;
-      box-shadow: 0 22px 40px rgba(15,23,42,0.35);
-      border: 3px solid #ffffff;
-      background: #0f172a;
+      border-radius: 32px;
+      box-shadow: 0 24px 48px rgba(15, 23, 42, 0.35);
+      border: 4px solid #ffffff;
+      background: #111827;
     }
 
     .hero-photo-caption {
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: #6b7280;
     }
 
@@ -249,21 +255,21 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.65rem 1.4rem;
+      padding: 0.7rem 1.5rem;
       border-radius: 999px;
-      background: radial-gradient(circle at top left, #60a5fa 0, #2563eb 45%, #1d4ed8 100%);
+      background: radial-gradient(circle at top left, #a855f7 0, #7c3aed 40%, #5b21b6 100%);
       color: #ffffff;
       font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
       border: none;
-      box-shadow: 0 10px 25px rgba(37,99,235,0.35);
+      box-shadow: 0 10px 25px rgba(88, 28, 135, 0.45);
       cursor: pointer;
       white-space: nowrap;
     }
 
     .btn-primary:hover {
-      background: radial-gradient(circle at top left, #93c5fd 0, #2563eb 45%, #1d4ed8 100%);
+      background: radial-gradient(circle at top left, #c4b5fd 0, #7c3aed 40%, #5b21b6 100%);
       transform: translateY(-1px);
     }
 
@@ -271,9 +277,9 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.6rem 1.25rem;
+      padding: 0.65rem 1.35rem;
       border-radius: 999px;
-      border: 1px solid #d1d5db;
+      border: 1px solid #e5e7eb;
       color: #111827;
       font-size: 0.9rem;
       background: #ffffff;
@@ -357,8 +363,9 @@
       }
 
       .profile-photo {
-        width: 210px;
-        height: 210px;
+        width: 230px;
+        height: 230px;
+        border-radius: 28px;
       }
     }
 
@@ -428,7 +435,7 @@
       <section id="about" class="hero">
         <div>
           <div class="hero-text-topline">
-            1-ON-1 IN-PERSON TUTORING
+            1-on-1 in-person tutoring
           </div>
           <h1>Math tutoring for kids &amp; teenagers.</h1>
           <p class="hero-subtitle">
@@ -471,7 +478,7 @@
               class="profile-photo">
           </div>
           <div class="hero-photo-caption">
-            Based in New York City • In-person sessions
+            Based in New York City · In-person sessions
           </div>
         </div>
       </section>
@@ -504,14 +511,16 @@
             right way. It’s logical, structured, and it rewards patience and careful thinking.
           </p>
           <p>
-            In college, I took courses like Calculus I &amp; II, Linear Algebra, Differential
-            Equations, and Probability &amp; Statistics as part of my Applied Mathematics and
-            Statistics degree. That background helps me see the “big picture” of where school
-            math is going and how to connect what your child is learning now to what comes next.
+            At Stony Brook, I completed a full sequence of mathematics courses, including
+            Calculus A–C, Linear Algebra, Abstract Algebra, Probability &amp; Statistics,
+            Regression Analysis, Financial Mathematics, and more as part of my Applied
+            Mathematics and Statistics degree.
           </p>
           <p>
-            My goal is to help students feel that math is something they can actually
-            understand and use, not just something they have to “get through.”
+            That background helps me see the “big picture” of where school math is going and
+            how to connect what your child is learning now to what comes next. My goal is to
+            help students feel that math is something they can actually understand and use—
+            not just something they have to get through.
           </p>
         </div>
       </section>
