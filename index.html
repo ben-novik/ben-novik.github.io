@@ -142,14 +142,14 @@
     }
 
     .section {
-      margin-top: 2.3rem;
+      margin-top: 2rem;
     }
 
     .section-divider {
       height: 1px;
       background: var(--border-subtle);
       opacity: 0.7;
-      margin: 2rem 0 1.75rem;
+      margin: 2rem 0 1.5rem;
     }
 
     /* HERO / ABOUT */
@@ -204,9 +204,8 @@
       border-radius: 24px;
       overflow: hidden;
       border: 3px solid #ffffff;
-      /* no background glow, no shadow */
       background: #000;
-      box-shadow: none;
+      box-shadow: none;      /* no glow / shadow */
     }
 
     .profile-photo {
@@ -262,20 +261,24 @@
       text-decoration: none;
     }
 
-    /* CONTENT SECTIONS */
+    /* CONTENT CARDS (match booking vibe) */
 
-    .two-column {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
-      gap: 2.2rem;
-      align-items: flex-start;
+    .cards-section {
+      margin-top: 2rem;
     }
 
     .section-card {
       background: var(--bg-card);
-      border-radius: 18px;
-      padding: 1.4rem 1.5rem 1.3rem;
+      border-radius: 20px;
+      padding: 1.6rem 1.8rem 1.4rem;
       border: 1px solid rgba(226, 232, 240, 0.9);
+      margin-bottom: 1.6rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.6rem;
     }
 
     .pill-list {
@@ -473,11 +476,10 @@
       </div>
     </section>
 
-    <div class="section-divider"></div>
-
-    <!-- WHY I WORK WELL WITH KIDS -->
-    <section id="kids" class="section">
-      <div class="section-card">
+    <!-- CONTENT CARDS -->
+    <section class="cards-section">
+      <!-- Why I work well with kids (full width card) -->
+      <div id="kids" class="section-card">
         <h3 class="subheading">Why I work well with kids</h3>
         <p>
           I’ve spent years helping and taking care of my little brother and younger cousins,
@@ -490,11 +492,9 @@
           feel simpler and more logical so students actually start to feel good about it.
         </p>
       </div>
-    </section>
 
-    <!-- WHAT I TUTOR + HOW SESSIONS WORK -->
-    <section id="services" class="section">
-      <div class="two-column">
+      <!-- What I tutor + How sessions work (two-column cards) -->
+      <div id="services" class="two-column">
         <div class="section-card">
           <h3 class="subheading">What I tutor</h3>
           <ul>
@@ -508,7 +508,7 @@
           </ul>
         </div>
 
-        <div class="section-card" id="sessions">
+        <div class="section-card">
           <h3 class="subheading">How sessions work</h3>
           <p>
             I offer one-on-one, in-person math tutoring and charge by the hour.
@@ -526,11 +526,9 @@
           </p>
         </div>
       </div>
-    </section>
 
-    <!-- WHY I LIKE MATH -->
-    <section id="math" class="section">
-      <div class="section-card">
+      <!-- Why I like math (full width card) -->
+      <div id="math" class="section-card">
         <h3 class="subheading">Why I like math (and why that helps your child)</h3>
         <p>
           I’ve always been drawn to math because it rewards patience and clear thinking.
@@ -555,11 +553,9 @@
           at a time.
         </p>
       </div>
-    </section>
 
-    <!-- PRICING -->
-    <section id="pricing" class="section">
-      <div class="section-card">
+      <!-- Pricing card -->
+      <div id="pricing" class="section-card">
         <h3 class="subheading">Pricing</h3>
         <p class="pricing-main">
           <span class="pricing-highlight">$100 per hour</span> — price includes parking, transportation, and tolls.
@@ -572,11 +568,9 @@
           how your child responds.
         </p>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="section-card">
+      <!-- Contact card -->
+      <div id="contact" class="section-card">
         <h3 class="subheading">Contact me</h3>
         <p>Parents can reach me directly at:</p>
         <p class="contact-email">
